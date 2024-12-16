@@ -7,7 +7,5 @@
         public string Operation { get; set; }
         public double? Result { get; set; }
         public string ErrorMessage { get; set; }
-
-
     }
 }
