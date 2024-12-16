@@ -15,7 +15,7 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+            <div class="navbar-collapse d-sm-inline-flex justify-content-between collapse">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
@@ -24,7 +24,7 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="body-content container">
         @RenderBody()
         <hr />
         <footer>
