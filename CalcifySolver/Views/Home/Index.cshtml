@@ -1,0 +1,38 @@
+﻿@model CalcifySolver.Models.CalculatorModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+
+    <h2>Simple Calculator</h2>
+
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div>
+            <label>Number 1:</label>
+            @Html.TextBoxFor(m => m.Number1, new { @type = "number", required = "required" })
+        </div>
+        <div>
+            <label>Number 2:</label>
+            @Html.TextBoxFor(m => m.Number2, new { @type = "number", required = "required" })
+        </div>
+        <div>
+            <label>Operation:</label>
+            @Html.DropDownListFor(m => m.Operation, new SelectList(new[] { "Add", "Subtract", "Multiply", "Divide" }), "Select Operation")
+        </div>
+        <button type="submit">Calculate</button>
+    }
+
+    @if (Model.Result.HasValue)
+    {
+        <h3>Result: @Model.Result</h3>
+    }
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <h3 style="color:red;">@Model.ErrorMessage</h3>
+    }
+
+</main>
