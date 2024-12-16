@@ -9,7 +9,6 @@ namespace CalcifySolver.Controllers
 {
     public class HomeController : Controller
     {
-        // Display the initial form
         public ActionResult Index()
         {
             return View(new CalculatorModel());
