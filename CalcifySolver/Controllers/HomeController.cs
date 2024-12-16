@@ -12,16 +12,14 @@ namespace CalcifySolver.Controllers
         // Display the initial form
         public ActionResult Index()
         {
-            return View(new CalculatorModel()); // Pass an empty model
+            return View(new CalculatorModel());
         }
 
-        // Handle the form submission
         [HttpPost]
         public ActionResult Index(CalculatorModel model)
         {
             if (model != null)
             {
-                // Perform the calculation based on the selected operation
                 switch (model.Operation)
                 {
                     case "Add":
@@ -45,7 +43,6 @@ namespace CalcifySolver.Controllers
                 }
             }
 
-            // Pass the updated model back to the view
             return View(model);
         }
     }
