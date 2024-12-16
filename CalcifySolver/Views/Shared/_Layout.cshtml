@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
 
-    <!-- Custom Styles -->
+
     <link rel="stylesheet" href="@Url.Content("~/Content/Custom/home/styles.css")" />
 
-    <!-- CSS Bundles -->
+
     @Styles.Render("~/Content/css")
 
-    <!-- Modernizr -->
+
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body class="d-flex flex-column min-vh-100">
-    <!-- Navbar with Advanced Bootstrap Styling -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
-            <!-- Logo and Branding -->
+
             @Html.ActionLink("CalcifySolver", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fw-bold" })
 
-            <!-- Navbar Toggle Button for Mobile -->
+
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarNav"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,11 +29,11 @@
 
             <div class="navbar-collapse justify-content-between collapse">
                 <ul class="navbar-nav">
-                    <!-- Home Link -->
+
                     <li class="nav-item">
                         @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })
                     </li>
-                    <!-- New Links -->
+
                     <li class="nav-item">
                         @Html.Raw("<a href='#' class='nav-link'>About</a>")
                     </li>
@@ -48,24 +48,22 @@
         </div>
     </nav>
 
-    <!-- Main Content Section -->
+
     <div class="my-5 flex-grow-1 container">
-        <div class="card p-4 shadow-lg">
-            <!-- Content from View -->
-            @RenderBody()
-        </div>
+
+        @RenderBody()
     </div>
 
-    <!-- Footer Section with Centered Text -->
+
     <footer class="bg-dark text-white py-3 mt-auto text-center">
         <p>&copy; @DateTime.Now.Year - CalcifySolver</p>
     </footer>
 
-    <!-- JS Bundles -->
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
 
-    <!-- Additional Scripts Section (Optional) -->
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
